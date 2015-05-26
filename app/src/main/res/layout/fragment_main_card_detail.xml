@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+        <TextView
+            android:id="@+id/today"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+           android:id="@+id/count"
+           android:textSize="20sp"
+           android:layout_below="@id/today"
+           android:text="Count "
+           android:layout_width="100dp"
+           android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/currentCountTextView"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/count"
+            android:layout_below="@id/today"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/time"
+            android:textSize="20sp"
+            android:layout_below="@id/currentCountTextView"
+            android:text="Time "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/hourTextView"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/time"
+            android:layout_below="@id/currentCountTextView"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/collon1"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/hourTextView"
+            android:layout_below="@id/currentCountTextView"
+            android:text=":"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/minuteTextView"
+            android:layout_toRightOf="@id/collon1"
+            android:layout_below="@id/currentCountTextView"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/collon2"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/minuteTextView"
+            android:layout_below="@id/currentCountTextView"
+            android:text=":"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/secondTextView"
+            android:layout_below="@id/currentCountTextView"
+            android:layout_toRightOf="@id/collon2"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </RelativeLayout>>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/y_card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+            <TextView
+                android:id="@+id/yesterday"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="Yesterday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_count"
+                android:textSize="20sp"
+                android:layout_below="@id/yesterday"
+                android:text="Count "
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_currentCountTextView"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/y_count"
+                android:layout_below="@id/yesterday"
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_time"
+                android:textSize="20sp"
+                android:layout_below="@id/y_currentCountTextView"
+                android:text="Time "
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_hourTextView"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/y_time"
+                android:layout_below="@id/y_currentCountTextView"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_collon1"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/y_hourTextView"
+                android:layout_below="@id/y_currentCountTextView"
+                android:text=":"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_minuteTextView"
+                android:layout_toRightOf="@id/y_collon1"
+                android:layout_below="@id/y_currentCountTextView"
+                android:text="0"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_collon2"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/y_minuteTextView"
+                android:layout_below="@id/y_currentCountTextView"
+                android:text=":"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_secondTextView"
+                android:layout_below="@id/y_currentCountTextView"
+                android:layout_toRightOf="@id/y_collon2"
+                android:text="0"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/average_card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/average"
+            android:text="Daily Average"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/averageTextView"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
