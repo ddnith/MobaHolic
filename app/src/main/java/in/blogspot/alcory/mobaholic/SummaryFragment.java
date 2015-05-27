@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,10 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Calendar;
 
 
 /**
@@ -34,6 +33,8 @@ public class SummaryFragment extends Fragment {
     private TextView seekBarTextView;
     private SeekBar seekBar;
     private CheckBox seekBarCheckBox;
+//    private CheckBox dailyNotificationCheckBox;
+//    private TimePicker timePicker;
 
     /**
      * Use this factory method to create a new instance of
@@ -41,7 +42,8 @@ public class SummaryFragment extends Fragment {
      * @return A new instance of fragment SummaryFragment.
      */
     public static SummaryFragment newInstance() {
-        SummaryFragment fragment = new SummaryFragment();
+        SummaryFragment fragment;
+        fragment = new SummaryFragment();
         return fragment;
     }
     public SummaryFragment() {
@@ -90,11 +92,11 @@ public class SummaryFragment extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar) {
                  SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF,getActivity().MODE_PRIVATE);
                  SharedPreferences.Editor editor = sharedPref.edit();
-                 editor.putFloat(MyApp.MAX_USE_NOTIFICATION_TIME, ((float) progress) / 2);
+                 editor.putFloat(MyApp.MAX_USE_NOTIFICATION_TIME, progress / 2);
                  editor.putBoolean(MyApp.NEED_TO_NOTIFY_USER_FOR_MAX_LIMIT, true);
                  editor.apply();
                 if(seekBarCheckBox.isChecked())
-                  Toast.makeText(getActivity(),"Notification Set for max use of time "+(float)progress/2,Toast.LENGTH_SHORT).show();
+                  Toast.makeText(getActivity(),"Notification Set for max use of time "+ progress /2,Toast.LENGTH_SHORT).show();
             }
         });
         seekBarCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -110,14 +112,42 @@ public class SummaryFragment extends Fragment {
 
             }
         });
+
+//        dailyNotificationCheckBox = (CheckBox)getView().findViewById(R.id.dailyNotificationCheckBox);
+//        timePicker = (TimePicker)getView().findViewById(R.id.timePicker);
+//        timePicker.setIs24HourView(true);
+//        int hour = timePicker.getCurrentHour();
+//        int min = timePicker.getCurrentMinute();
+
+//        dailyNotificationCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+//                Toast.makeText(getActivity(),"DEEPAK setChecked",Toast.LENGTH_LONG).show();
+//                int hour = timePicker.getCurrentHour();
+//                int min = timePicker.getCurrentMinute();
+//          setDailyNotification(isChecked,hour,min);
+//
+//            }
+//        });
+
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+//    private void setDailyNotification(boolean isChecked, int hour, int min) {
+//        if(isChecked){
+//            Toast.makeText(getActivity(),"DEEPAK setDailyNotification"+hour+" "+min,Toast.LENGTH_LONG).show();
+//
+//            Intent myIntent = new Intent(getActivity(),AlarmReceiver.class);
+//            AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(getActivity().ALARM_SERVICE);
+//            PendingIntent pendingIntent = PendingIntent.getService(getActivity(), 0, myIntent, 0);
+//
+//            Calendar calendar = Calendar.getInstance();
+//            calendar.set(Calendar.MINUTE, min);
+//            calendar.set(Calendar.HOUR, hour);
+//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 1000*60*60*24 , pendingIntent);
+//        }
+//
+//    }
+
 
     @Override
     public void onAttach(Activity activity) {

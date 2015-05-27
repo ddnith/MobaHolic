@@ -86,6 +86,7 @@ public class MyService extends Service {
         PendingIntent resultPendingIntent = PendingIntent.getActivity(getApplicationContext(),0,resultIntent,PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(resultPendingIntent);
         mBuilder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+        mBuilder.setAutoCancel(true);
         // Sets an ID for the notification
         int mNotificationId = 001;
         NotificationManager mNotifyMgr =
