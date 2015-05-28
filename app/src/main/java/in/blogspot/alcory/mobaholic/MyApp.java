@@ -137,6 +137,7 @@ public class MyApp  extends Application{
         String totalTimeSpent = "0";
         HashMap<String,String> currentDayUserHistory = dbTools.getCurrentDayUserHistory(thisDay);
         totalTimeSpent = currentDayUserHistory.get("time_spent");
+        if(null == totalTimeSpent)return 0;
         Log.d("DEEPAK"," currentDayUserHistory "+currentDayUserHistory);
         return Long.parseLong(totalTimeSpent);
     }
