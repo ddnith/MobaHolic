@@ -10,5 +10,6 @@
     <string name="title_section3">More</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_notification">Notify Me daily</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 
 </resources>
