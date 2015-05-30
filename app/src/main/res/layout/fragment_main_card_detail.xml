@@ -14,77 +14,94 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
+            android:padding="@dimen/card_view_padding"
             >
         <TextView
             android:id="@+id/today"
-            android:textSize="25sp"
+            android:textSize="@dimen/card_view_title_text_size"
             android:textStyle="bold"
             android:text="Today"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
            android:id="@+id/count"
-           android:textSize="20sp"
+           android:textSize="@dimen/main_card_text_size"
            android:layout_below="@id/today"
            android:text="Count "
-           android:layout_width="100dp"
+           android:layout_width="75dp"
            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/currentCountTextView"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_toRightOf="@id/count"
             android:layout_below="@id/today"
             android:text="0"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+                android:id="@+id/currentCountExplanationTextView"
+            android:textSize="@dimen/main_card_text_size"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/currentCountTextView"
+                android:layout_below="@id/today"
+                android:text="times you checked your phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <TextView
             android:id="@+id/time"
-            android:textSize="20sp"
-            android:layout_below="@id/currentCountTextView"
+            android:textSize="@dimen/main_card_text_size"
+            android:layout_below="@id/currentCountExplanationTextView"
             android:text="Time "
-            android:layout_width="100dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/hourTextView"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_toRightOf="@id/time"
-            android:layout_below="@id/currentCountTextView"
+            android:layout_below="@id/currentCountExplanationTextView"
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/collon1"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_toRightOf="@id/hourTextView"
-            android:layout_below="@id/currentCountTextView"
-            android:text=":"
+            android:layout_below="@id/currentCountExplanationTextView"
+            android:text=" hr "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/minuteTextView"
             android:layout_toRightOf="@id/collon1"
-            android:layout_below="@id/currentCountTextView"
+            android:layout_below="@id/currentCountExplanationTextView"
             android:text="0"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/collon2"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_toRightOf="@id/minuteTextView"
-            android:layout_below="@id/currentCountTextView"
-            android:text=":"
+            android:layout_below="@id/currentCountExplanationTextView"
+            android:text=" min "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/secondTextView"
-            android:layout_below="@id/currentCountTextView"
+            android:layout_below="@id/currentCountExplanationTextView"
             android:layout_toRightOf="@id/collon2"
             android:text="0"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <TextView
+                android:id="@+id/collon3"
+                android:textSize="@dimen/main_card_text_size"
+                android:layout_toRightOf="@id/secondTextView"
+                android:layout_below="@id/currentCountExplanationTextView"
+                android:text=" sec "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </RelativeLayout>>
 
@@ -100,75 +117,92 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
+            android:padding="@dimen/card_view_padding"
             >
             <TextView
                 android:id="@+id/yesterday"
-                android:textSize="25sp"
+                android:textSize="@dimen/card_view_title_text_size"
                 android:textStyle="bold"
                 android:text="Yesterday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_count"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_below="@id/yesterday"
                 android:text="Count "
-                android:layout_width="100dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_currentCountTextView"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_toRightOf="@id/y_count"
                 android:layout_below="@id/yesterday"
                 android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/currentCountExplanationTextView2"
+                android:textSize="@dimen/main_card_text_size"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/y_currentCountTextView"
+                android:layout_below="@id/yesterday"
+                android:text="times you checked your phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_time"
-                android:textSize="20sp"
-                android:layout_below="@id/y_currentCountTextView"
+                android:textSize="@dimen/main_card_text_size"
+                android:layout_below="@id/currentCountExplanationTextView2"
                 android:text="Time "
-                android:layout_width="100dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_hourTextView"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_toRightOf="@id/y_time"
-                android:layout_below="@id/y_currentCountTextView"
+                android:layout_below="@id/currentCountExplanationTextView2"
                 android:text="0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_collon1"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_toRightOf="@id/y_hourTextView"
-                android:layout_below="@id/y_currentCountTextView"
-                android:text=":"
+                android:layout_below="@id/currentCountExplanationTextView2"
+                android:text=" hr "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_minuteTextView"
                 android:layout_toRightOf="@id/y_collon1"
-                android:layout_below="@id/y_currentCountTextView"
+                android:layout_below="@id/currentCountExplanationTextView2"
                 android:text="0"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_collon2"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
                 android:layout_toRightOf="@id/y_minuteTextView"
-                android:layout_below="@id/y_currentCountTextView"
-                android:text=":"
+                android:layout_below="@id/currentCountExplanationTextView2"
+                android:text=" min "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/y_secondTextView"
-                android:layout_below="@id/y_currentCountTextView"
+                android:layout_below="@id/currentCountExplanationTextView2"
                 android:layout_toRightOf="@id/y_collon2"
                 android:text="0"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_card_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/y_collon3"
+                android:textSize="@dimen/main_card_text_size"
+                android:layout_toRightOf="@id/y_secondTextView"
+                android:layout_below="@id/currentCountExplanationTextView2"
+                android:text=" sec "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -179,6 +213,7 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/average_card_view"
         android:layout_gravity="center"
+        android:padding="@dimen/card_view_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp">
@@ -189,14 +224,14 @@
         <TextView
             android:id="@+id/average"
             android:text="Daily Average"
-            android:textSize="20sp"
+            android:textSize="@dimen/card_view_title_text_size"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/averageTextView"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_card_text_size"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

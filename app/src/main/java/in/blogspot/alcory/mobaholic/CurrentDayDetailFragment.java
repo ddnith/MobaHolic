@@ -3,7 +3,6 @@ package in.blogspot.alcory.mobaholic;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -13,15 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.Locale;
 
 
 /**
@@ -43,7 +37,7 @@ public class CurrentDayDetailFragment extends Fragment {
     DbTools dbTools;
 //    ArrayList<HashMap<String,String>> allUserRecord;
 
-    private OnFragmentInteractionListener mListener;
+    //private OnFragmentInteractionListener mListener;
 
     /**
      * Use this factory method to create a new instance of
@@ -52,8 +46,7 @@ public class CurrentDayDetailFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static CurrentDayDetailFragment newInstance() {
-        CurrentDayDetailFragment fragment = new CurrentDayDetailFragment();
-        return fragment;
+        return new CurrentDayDetailFragment();
     }
     public CurrentDayDetailFragment() {
         // Required empty public constructor
@@ -117,7 +110,7 @@ public class CurrentDayDetailFragment extends Fragment {
         long Minutes = averageTimeSpent / (60 * 1000) % 60;
         long Hours = averageTimeSpent / (60 * 60 * 1000) % 24;
 
-        return Hours+":"+Minutes+":"+Seconds ;
+        return Hours+" hr "+Minutes+" min "+Seconds+" sec " ;
     }
 
     private void fillTodayDetails() {
@@ -199,7 +192,7 @@ public class CurrentDayDetailFragment extends Fragment {
 //    }
 
     private int  getTodayCount(int thisDay){
-        String count = "0";
+        String count;
         HashMap<String,String> currentDayUserHistory = dbTools.getCurrentDayUserHistory(thisDay);
         count = currentDayUserHistory.get("count");
         Log.d("DEEPAK","get TodayCount count "+count);
@@ -261,18 +254,18 @@ public class CurrentDayDetailFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        try {
+//            mListener = (OnFragmentInteractionListener) activity;
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException(activity.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        //mListener = null;
     }
 
     /**

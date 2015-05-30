@@ -12,10 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
-import java.util.Calendar;
 
 
 /**
@@ -29,7 +26,7 @@ import java.util.Calendar;
  */
 public class SummaryFragment extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
+    //private OnFragmentInteractionListener mListener;
     private TextView seekBarTextView;
     private SeekBar seekBar;
     private CheckBox seekBarCheckBox;
@@ -67,13 +64,13 @@ public class SummaryFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         seekBarTextView = (TextView)getView().findViewById(R.id.seekBarTextView);
         seekBar = (SeekBar)getView().findViewById(R.id.seekBar);
-        SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF,getActivity().MODE_PRIVATE);
+        SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF,MainActivity.MODE_PRIVATE);
         float progress = sharedPref.getFloat(MyApp.MAX_USE_NOTIFICATION_TIME,0)*2;
 
         seekBar.setProgress((int)progress);
         seekBarCheckBox = (CheckBox)getView().findViewById(R.id.seekBarCheckBox);
         seekBarCheckBox.setChecked(sharedPref.getBoolean(MyApp.MAX_USE_NOTIFICATION_SETTING,false));
-        seekBarTextView.setText("Notify me if uses exceed by "+progress/2+" hour");
+        seekBarTextView.setText("Notify me if usage exceed by "+progress/2+" hour");
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             float progress = 0;
@@ -90,7 +87,7 @@ public class SummaryFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                 SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF,getActivity().MODE_PRIVATE);
+                 SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF,MainActivity.MODE_PRIVATE);
                  SharedPreferences.Editor editor = sharedPref.edit();
                  editor.putFloat(MyApp.MAX_USE_NOTIFICATION_TIME, progress / 2);
                  editor.putBoolean(MyApp.NEED_TO_NOTIFY_USER_FOR_MAX_LIMIT, true);
@@ -102,7 +99,7 @@ public class SummaryFragment extends Fragment {
         seekBarCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                    SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF, getActivity().MODE_PRIVATE);
+                    SharedPreferences sharedPref = getActivity().getSharedPreferences(MyApp.MY_SHARED_PREF, MainActivity.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putBoolean(MyApp.MAX_USE_NOTIFICATION_SETTING,isChecked);
                 editor.putBoolean(MyApp.NEED_TO_NOTIFY_USER_FOR_MAX_LIMIT, true);
@@ -152,18 +149,18 @@ public class SummaryFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        try {
+//            mListener = (OnFragmentInteractionListener) activity;
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException(activity.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        //mListener = null;
     }
 
     /**
