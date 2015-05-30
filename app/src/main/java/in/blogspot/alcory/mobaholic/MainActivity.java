@@ -13,13 +13,8 @@ import android.net.Uri;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements ActionBar.TabListener,CurrentDayDetailFragment.OnFragmentInteractionListener,
@@ -48,13 +43,25 @@ public class MainActivity extends Activity implements ActionBar.TabListener,Curr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        // Make this activity, full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#008080")));//main_activity_color
-        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#008080")));//main_activity_color
+        if(actionBar != null) {
+            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#008080")));//main_activity_color
+            actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#008080")));//main_activity_color
+        }
+        else
+            Toast.makeText(this,"Oops.. something went wrong!!!",Toast.LENGTH_SHORT).show();
+
+        // Hide the Title bar of this activity screen
+        //getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+
+
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
