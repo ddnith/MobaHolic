@@ -70,7 +70,7 @@ public class SummaryFragment extends Fragment {
         seekBar.setProgress((int)progress);
         seekBarCheckBox = (CheckBox)getView().findViewById(R.id.seekBarCheckBox);
         seekBarCheckBox.setChecked(sharedPref.getBoolean(MyApp.MAX_USE_NOTIFICATION_SETTING,false));
-        seekBarTextView.setText("Notify me if usage exceed by "+progress/2+" hour");
+        seekBarTextView.setText("Notify me if usage exceeds by "+progress/2+" hour");
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             float progress = 0;

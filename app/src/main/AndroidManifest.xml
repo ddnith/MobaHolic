@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.blogspot.alcory.mobaholic" >
+    package="in.blogspot.alcory.mobaholic"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1">
 
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:name=".MyApp"
@@ -44,17 +46,6 @@
 
         </activity>
 
-        <receiver
-            android:name=".AlarmReceiver"
-            android:enabled="true"
-            android:exported="true" >
-        </receiver>
-
-        <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.Transparent"
-            android:label="@string/app_name" >
-        </activity>
     </application>
 
 </manifest>
