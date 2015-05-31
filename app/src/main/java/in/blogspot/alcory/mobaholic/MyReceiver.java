@@ -3,15 +3,12 @@ package in.blogspot.alcory.mobaholic;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Date;
 
 public class MyReceiver extends BroadcastReceiver {
-    public static boolean wasScreenOn = true;
 
     public MyReceiver() {
     }
@@ -20,7 +17,7 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
 
-        Intent i =new Intent(context,MyService.class);   // start this sticky service to keep process alive
+        Intent i = new Intent(context,MyService.class);   // start this sticky service to keep process alive
         context.startService(i);
 
         if(i.getAction()==Intent.ACTION_USER_PRESENT) {

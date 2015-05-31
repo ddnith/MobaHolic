@@ -1,6 +1,7 @@
 package in.blogspot.alcory.mobaholic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -92,8 +93,12 @@ public class SummaryFragment extends Fragment {
                  editor.putFloat(MyApp.MAX_USE_NOTIFICATION_TIME, progress / 2);
                  editor.putBoolean(MyApp.NEED_TO_NOTIFY_USER_FOR_MAX_LIMIT, true);
                  editor.apply();
-                if(seekBarCheckBox.isChecked())
+                if(seekBarCheckBox.isChecked()){
+
+                    Intent i = new Intent(getActivity().getApplicationContext(),MyService.class);   // start this sticky service to keep process alive
+                    getActivity().getApplicationContext().startService(i);
                   Toast.makeText(getActivity(),"Notification Set for max use of time "+ progress /2,Toast.LENGTH_SHORT).show();
+                }
             }
         });
         seekBarCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -105,6 +110,11 @@ public class SummaryFragment extends Fragment {
                 editor.putBoolean(MyApp.NEED_TO_NOTIFY_USER_FOR_MAX_LIMIT, true);
                 editor.apply();
                 String notification_setting = isChecked?" Enabled ":" Disabled";
+                if(isChecked){
+                    Intent i = new Intent(getActivity().getApplicationContext(),MyService.class);   // start this sticky service to keep process alive
+                    getActivity().getApplicationContext().startService(i);
+                }
+
                 Toast.makeText(getActivity(),"Notification"+notification_setting ,Toast.LENGTH_SHORT).show();
 
             }
