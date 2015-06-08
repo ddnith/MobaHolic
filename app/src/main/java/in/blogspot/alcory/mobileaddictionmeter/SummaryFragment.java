@@ -1,4 +1,4 @@
-package in.blogspot.alcory.mobaholic;
+package in.blogspot.alcory.mobileaddictionmeter;
 
 import android.app.Activity;
 import android.content.Intent;

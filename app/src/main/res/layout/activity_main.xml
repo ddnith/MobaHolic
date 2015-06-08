@@ -4,4 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_activity_color"
-    tools:context="in.blogspot.alcory.mobaholic.MainActivity" />
+    tools:context="in.blogspot.alcory.mobileaddictionmeter.MainActivity" />

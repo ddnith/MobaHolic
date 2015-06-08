@@ -1,4 +1,4 @@
-package in.blogspot.alcory.mobaholic;
+package in.blogspot.alcory.mobileaddictionmeter;
 
 import android.app.Application;
 import android.content.BroadcastReceiver;
@@ -52,6 +52,9 @@ public class MyApp  extends Application{
         c.setTimeInMillis(last);
 
         int lastDay = c.get(Calendar.DAY_OF_YEAR);
+        Log.d("DEEPAK","checkAndSetNewDate DEEPAK entry last "+last);
+        Log.d("DEEPAK","checkAndSetNewDate DEEPAK entry thisDay "+thisDay);
+        Log.d("DEEPAK","checkAndSetNewDate DEEPAK entry lastDay "+lastDay);
         if(last == 0 || thisDay != lastDay){
             updateInterMediateSessionEntry(context);
             Log.d("DEEPAK","checkAndSetNewDate DEEPAK entry in");

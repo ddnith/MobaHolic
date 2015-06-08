@@ -1,4 +1,4 @@
-package in.blogspot.alcory.mobaholic;
+package in.blogspot.alcory.mobileaddictionmeter;
 
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
